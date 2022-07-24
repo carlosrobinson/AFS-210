@@ -1,6 +1,3 @@
-
-
-
 Data1 = (7, False, "Apple", True, 7, 98.6) 
 
 Data2 = {"July", 4, 8, "Tango", 4.3, "Bingo"}
