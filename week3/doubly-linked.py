@@ -5,6 +5,8 @@ class Node:
         self.next = None
         self.prev = None
 
+my_list = ['May', 'the', 'force', 'be', 'with', 'you', '!']
+
 class DoublyLinkedList:
     # A doubly-linked list.
     def __init__(self):
@@ -39,7 +41,6 @@ class DoublyLinkedList:
             self.tail = new_node
         self.head = new_node
         self.count = self.count + 1
-        
 
     def addLast(self, data) -> None:
         # Add a node at the end of the list
@@ -48,7 +49,7 @@ class DoublyLinkedList:
         # Points to null
         new_node.next = None
         # check if there s a tail
-
+        
         if self.tail != None:
             new_node.prev = self.tail
             self.tail.next = new_node
@@ -56,7 +57,7 @@ class DoublyLinkedList:
             self.head = new_node
         self.tail = new_node
         self.count = self.count + 1
-  
+        
 
     def addAtIndex(self, data, index):
         # Add a node to the list at the given index position
@@ -102,6 +103,7 @@ class DoublyLinkedList:
             return location
         else: 
             return - 1
+
 
     def add(self, data) -> None:
         # Append an item to the end of the list
@@ -183,29 +185,23 @@ class DoublyLinkedList:
 
 
 
-
 add_node = DoublyLinkedList()
-# print(add_node.addFirst(90))
-# print(add_node.addFirst(80))
-# print(add_node.addFirst(70))
-
-# add_node.head.data)
-# add_node.head.next.data)
-# print(add_node.head.next.next.data)
+add_node.addFirst('be')
+add_node.addFirst('Force')
+add_node.addFirst('the')
+add_node.addFirst('May')
 
 
-add_node.addLast(120)
-add_node.addLast(110)
-add_node.addLast(100)
 
-# print(add_node.tail.data)
-# print(add_node.tail.prev.data)
-# print(add_node.tail.prev.prev.data)
-add_node.addAtIndex(200, 3)
-add_node.addAtIndex(210, 1)
-add_node.addAtIndex(250, 8)
-add_node.addAtIndex(280, 0)
+add_node.addLast('with')
+add_node.addLast('you')
 
-print(add_node.indexOf(120))
-print(add_node.indexOf(500))
+
+print(add_node.__str__())
+
+print(add_node.indexOf('with'))
+add_node.delete('you')
+add_node.addAtIndex('us', 5)
+add_node.addAtIndex('all', 6)
+add_node.addLast('!')
 print(add_node.__str__())
