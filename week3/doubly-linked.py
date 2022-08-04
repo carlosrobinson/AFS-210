@@ -195,12 +195,14 @@ add_node.addFirst('May')
 
 add_node.addLast('with')
 add_node.addLast('you')
+add_node.addLast('!')
 
 
 print(add_node.__str__())
 
 print(add_node.indexOf('with'))
 add_node.delete('you')
+add_node.delete('!')
 add_node.addAtIndex('us', 5)
 add_node.addAtIndex('all', 6)
 add_node.addLast('!')
