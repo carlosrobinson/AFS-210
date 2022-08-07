@@ -1,8 +1,22 @@
 
-graph = {
-
-}
-
+graph = { "x": {"a": 0},
+         "a": {"b": 2,
+                 "c": 1, 
+                 "f": 20, 
+                 "e": 9,
+                 "d": 3
+                },
+                 
+          "b" : {"c": 4 , "e": 3},
+          "c" : {"d": 8},
+          "d" : {"e" : 7},
+          "e" : {"f": 5},
+          "f" : {"c": 2, "g": 2, "h": 2},
+          "g" : {"f": 1, "h": 6},
+          "h" : {"f": 9, "g": 8},
+          "i" : {}
+        }
+total_cost = []
 
 # finds shortest path between 2 nodes of a graph using BFS
 def breadth_first_search(graph, start, goal):
@@ -51,7 +65,7 @@ def dijsktra(graph, initial, end):
         visited.add(current_node)
         destinations = graph[current_node]
         weight_to_current_node = shortest_paths[current_node][1]
-
+        
         for next_node in destinations:
             weight = graph[current_node][next_node] + weight_to_current_node
             if next_node not in shortest_paths:
@@ -74,6 +88,17 @@ def dijsktra(graph, initial, end):
         next_node = shortest_paths[current_node][0]
         current_node = next_node
     # Reverse path
+    total_cost.append(weight_to_current_node)
     path = path[::-1]
     return path
 
+def cost():
+    for cost in total_cost:
+        return cost
+        
+shortest_path = breadth_first_search(graph, 'a', 'h')
+cheapest_path = dijsktra(graph, 'a', 'h')
+cost_of_cheapest_path = cost()
+print(f'Shortest path between a and h is {shortest_path}')
+print(f'Cheapest path between a and h is {cheapest_path}')
+print(f'The cost of going between a and h is {cost_of_cheapest_path}')
