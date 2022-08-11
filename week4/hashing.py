@@ -1,13 +1,3 @@
-# class HashItem: 
-#     def __init__(self, key, value): 
-#         self.key = key 
-#         self.value = value 
-        
-        
-from audioop import mul
-from posixpath import split
-
-
 class HashTable:
     def __init__(self) -> None:
         self.size = 10
