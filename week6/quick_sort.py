@@ -1,6 +1,6 @@
 import time
 import random
-from turtle import st
+# from turtle import st
 
 def quick_sort(a_list, start, end):
     # list size is 1 or less (which doesn't make sense)
